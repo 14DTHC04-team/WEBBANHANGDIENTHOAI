@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="261a4ee0c10d45248e1144ec77c6292b" Name="Diagram1" ZoomLevel="60">
+        <EntityTypeShape EntityType="dbQuanLyBanHang.C__MigrationHistory" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="dbQuanLyBanHang.AspNetRole" Width="1.5" PointX="5.75" PointY="2.5" />
+        <EntityTypeShape EntityType="dbQuanLyBanHang.AspNetUserClaim" Width="1.5" PointX="10.25" PointY="1" />
+        <EntityTypeShape EntityType="dbQuanLyBanHang.AspNetUserLogin" Width="1.5" PointX="10.25" PointY="3.75" />
+        <EntityTypeShape EntityType="dbQuanLyBanHang.AspNetUser" Width="1.5" PointX="8" PointY="1.125" />
+        <EntityTypeShape EntityType="dbQuanLyBanHang.BinhLuan" Width="1.5" PointX="12.25" PointY="7.5" />
+        <EntityTypeShape EntityType="dbQuanLyBanHang.ChiTietDonDatHang" Width="1.5" PointX="12.25" PointY="12.125" />
+        <EntityTypeShape EntityType="dbQuanLyBanHang.ChiTietPhieuNhap" Width="1.5" PointX="5.25" PointY="10.5" />
+        <EntityTypeShape EntityType="dbQuanLyBanHang.DonDatHang" Width="1.5" PointX="10" PointY="12" />
+        <EntityTypeShape EntityType="dbQuanLyBanHang.KhachHang" Width="1.5" PointX="7.75" PointY="12.25" />
+        <EntityTypeShape EntityType="dbQuanLyBanHang.LoaiSanPham" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="dbQuanLyBanHang.LoaiThanhVien" Width="1.5" PointX="7.75" PointY="7.625" />
+        <EntityTypeShape EntityType="dbQuanLyBanHang.NhaCungCap" Width="1.5" PointX="0.75" PointY="4.125" />
+        <EntityTypeShape EntityType="dbQuanLyBanHang.NhaSanXuat" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="dbQuanLyBanHang.PhieuNhap" Width="1.5" PointX="3" PointY="10.5" />
+        <EntityTypeShape EntityType="dbQuanLyBanHang.SanPham" Width="1.5" PointX="3" PointY="2.75" />
+        <EntityTypeShape EntityType="dbQuanLyBanHang.sysdiagram" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="dbQuanLyBanHang.ThanhVien" Width="1.5" PointX="10" PointY="7" />
+        <AssociationConnector Association="dbQuanLyBanHang.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="dbQuanLyBanHang.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="dbQuanLyBanHang.FK_BinhLuan_ThanhVien" />
+        <AssociationConnector Association="dbQuanLyBanHang.FK_ChiTietDonDatHang_DonDatHang" />
+        <AssociationConnector Association="dbQuanLyBanHang.FK_ChiTietPhieuNhap_PhieuNhap" />
+        <AssociationConnector Association="dbQuanLyBanHang.FK_DonDatHang_KhachHang" />
+        <AssociationConnector Association="dbQuanLyBanHang.FK_SanPham_LoaiSanPham" />
+        <AssociationConnector Association="dbQuanLyBanHang.FK_ThanhVien_LoaiThanhVien" />
+        <AssociationConnector Association="dbQuanLyBanHang.FK_PhieuNhap_NhaCungCap" />
+        <AssociationConnector Association="dbQuanLyBanHang.FK_SanPham_NhaCungCap" />
+        <AssociationConnector Association="dbQuanLyBanHang.FK_SanPham_NhaSanXuat" />
+        <AssociationConnector Association="dbQuanLyBanHang.AspNetUserRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,59 @@
+﻿@using WebBanHangDienThoai.Models;
+@model IEnumerable<SanPham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/AdminLayout.cshtml";
+    @*Khởi tạo control WebGrid*@
+    WebGrid grid = new WebGrid(source: Model @*List dữ liệu*@, rowsPerPage: 20);
+}
+
+<form action="@Url.Action("Taomoi","QuanLySanPham")">
+    <input type="submit" value="Tạo mới sản phẩm" class="btn btn-success" />
+</form>
+<hr />
+
+@*Thể hiện dữ liệu thông qua control WebGrid*@
+@grid.GetHtml(
+    tableStyle:"divTable",
+    headerStyle:"gridHead",
+    footerStyle:"gridFooter",
+    rowStyle:"gridRow",
+    alternatingRowStyle:"gridAltRow",
+    columns: grid.Columns(
+        grid.Column("MaSP","Mã sản phẩm"),@*Tên trong Column phải trùng với tên trong csdl*@
+        grid.Column("TenSP", "Tên sản phẩm"),
+        grid.Column("CauHinh", "Cấu hình", format: p => @Html.Raw(p.CauHinh)),
+        grid.Column("HinhAnh", "Hình ảnh", format: p => @Html.Raw("<img width=\"150\" height=\"150\" src=\"../Content/images/" + p.HinhAnh + "\">")),
+        grid.Column(format: p => @Html.ActionLink("Chỉnh sửa","ChinhSua",new { id=p.MaSP})),
+        grid.Column(format: p => @Html.ActionLink("Xóa", "Xoa", new { id = p.MaSP }))
+        )
+    )
+
+<style>
+    .divTable{
+        width:100%;
+        border:1px solid #808080;
+    }
+        .divTable td {
+            border: 1px solid #808080
+        }
+
+    .gridHead {
+        background-color: green;
+    }
+    .gridHead>th>a{
+        color:#ffffff;
+    }
+    .gridFooter{
+        font-weight:bold;
+    }
+    /*.gridRow{
+        color:#fff;
+        background-color:blueviolet;
+    }
+    .gridAltRow{
+        color:#fff;
+        background-color: mediumpurple;
+    }*/
+</style>

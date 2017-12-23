@@ -1,0 +1,54 @@
+﻿@using WebBanHangDienThoai.ViewModel
+@model ItemGioHang
+@{
+    ViewBag.Title = "SuaGioHang";
+    Layout = "~/Views/Layout/HomeLayout.cshtml";
+}
+@{ 
+    List<ItemGioHang> lstGioHang = ViewBag.GioHang as List<ItemGioHang>;
+}
+    <table class="table" >
+        <tr >
+            <td>Mã SP</td>
+            <td>Tên SP</td>
+            <td>Hình ảnh</td>
+            <td>Số lượng</td>
+            <td>Đơn giá</td>
+            <td>Thành tiền</td>
+        </tr>
+        @foreach (var item in lstGioHang)
+        {
+            //Sản phẩm có mã sản phẩm được chỉnh sửa gởi từ trang XemGioHang
+            if (Model.MaSP == item.MaSP)
+            {
+                using (Html.BeginForm("CapNhatGioHang", "GioHang"))
+                {
+                    <tr>
+                        <td>@item.MaSP @Html.Hidden("MaSP",item.MaSP)</td>
+                        <td>@item.TenSP</td>
+                        <td><img src="@Url.Content("~/Content/images/" + item.HinhAnh)" width="100" height="150" /></td>
+                        <td>@Html.TextBox("SoLuong", item.SoLuong,new { @class="SoLuongThayDoi"}) 
+                            <p style="color:red" id="TB_SoLuongThayDoi"></p>
+                        </td>
+                        <td>@item.DonGia.ToString("#,##") đồng</td>
+                        <td>@item.ThanhTien.ToString("#,##") đồng</td>
+                        <td><input type="submit" value="Cập nhật" class="btn btn-danger" id="btnCapNhatGioHang"/></td>
+                        <td>@Html.ActionLink("Xóa", "XoaGioHang", new { @MaSP = item.MaSP })</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td>@item.MaSP</td>
+                    <td>@item.TenSP</td>
+                    <td><img src="@Url.Content("~/Content/images/"+item.HinhAnh)" width="100" height="150" /></td>
+                    <td>@item.SoLuong</td>
+                    <td>@item.DonGia.ToString("#,##") đồng</td>
+                    <td>@item.ThanhTien.ToString("#,##") đồng</td>
+                    <td>@Html.ActionLink("Sửa", "SuaGioHang", new { @MaSP = item.MaSP } )</td>
+                    <td>@Html.ActionLink("Xóa", "XoaGioHang", new { @MaSP = item.MaSP })</td>
+                </tr>
+            }
+        }
+    </table>
