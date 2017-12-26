@@ -10,7 +10,7 @@ namespace WebBanHangDienThoai.Controllers
     public class GioHangController : Controller
     {
         QLBanHangDienThoaiEntities db = new QLBanHangDienThoaiEntities();
-      
+        // nguyen le anh khoa
         public ActionResult GioHangPartial()
         {
             if(TinhTongSoLuong()==0)
