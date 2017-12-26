@@ -9,23 +9,6 @@ namespace WebBanHangDienThoai.Controllers
 {
     public class HomeController : Controller
     {
-        QLBanHangDienThoaiEntities db = new QLBanHangDienThoaiEntities();
-        // GET: Home
-        public ActionResult Index()
-        {
-            //List Dien thoai moi nhat|| Chuc Nang xem san pham moi
-            var lstDTM = db.SanPhams.Where(n => n.MaLoaiSP == 1 );
-            ViewBag.ListDTM = lstDTM;
-
-            //List LapTop moi nhat
-            var lstLTM = db.SanPhams.Where(n => n.MaLoaiSP == 2 && n.Moi == 1 && n.DaXoa == 0);
-            ViewBag.ListLTM = lstLTM;
-            return View();
-        }
-        public ActionResult MenuPartial()
-        {
-            var lstSP = db.SanPhams;
-            return PartialView(lstSP);
-        }
+       
     }
 }
