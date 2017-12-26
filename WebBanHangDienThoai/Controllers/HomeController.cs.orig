@@ -9,6 +9,9 @@ namespace WebBanHangDienThoai.Controllers
 {
     public class HomeController : Controller
     {
+<<<<<<< HEAD
+       
+=======
         QLBanHangDienThoaiEntities db = new QLBanHangDienThoaiEntities();
         // GET: Home
         public ActionResult Index()
@@ -27,5 +30,6 @@ namespace WebBanHangDienThoai.Controllers
             var lstSP = db.SanPhams;
             return PartialView(lstSP);
         }
+>>>>>>> master
     }
 }
