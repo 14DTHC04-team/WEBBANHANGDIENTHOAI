@@ -13,7 +13,7 @@ namespace WebBanHangDienThoai.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            //List Dien thoai moi nhat @@sadsadasads
+            //List Dien thoai moi nhat|| Chuc Nang xem san pham moi
             var lstDTM = db.SanPhams.Where(n => n.MaLoaiSP == 1 );
             ViewBag.ListDTM = lstDTM;
 
